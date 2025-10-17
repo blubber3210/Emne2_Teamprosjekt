@@ -1,3 +1,5 @@
+// INGEN TULLER MED MODELLEN UTEN Å SI FRA !!! 
+
 const model = {
     app: {
         currentPage: 'loginPage',

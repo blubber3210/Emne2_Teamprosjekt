@@ -1,0 +1,26 @@
+Planlegging: 
+
+Login side		= 
+Main feed		=
+Add places		=
+Place page		=
+Register user	= 
+
+Universalt: alt generert utifra en funksjon
+
+
+updateView(){ 
+	if (currentPage == 'registerUser'){
+		drawRegisterUser();
+	} else if (currentPage == 'mainFeed'){
+		drawMainFeed();
+	} etc etc etc
+}; // skal bestemme hvilket view 
+
+drawRegisterUser()		// Kamilla
+drawMainFeed()			// Christian
+drawAddPlaces()			// Elida 
+drawPlacePage()			// Jamal 
+drawLoginPage() 		// Tom Marius
+
+
