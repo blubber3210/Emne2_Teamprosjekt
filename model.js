@@ -1,4 +1,4 @@
-// INGEN TULLER MED MODELLEN UTEN Å SI FRA !!! 
+// INGEN TULLER MED MODELLEN UTEN Å SI FRA !!! :)
 
 const model = {
     app: {
