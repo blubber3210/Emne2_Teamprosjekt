@@ -1,28 +1,28 @@
 function showLoginPage() {
-    let html = ""
     if (model.app.currentUser == null) {
-        html = `
+        container.innerHTML = `
             <h2>Logg inn</h2>
             <input 
                 type="text" 
                 placeholder="Brukernavn" 
-                value="TEST"
+                value="${model.viewState.login.userName}"
                 oninput="model.viewState.login.userName=this.value"
             />
+            <br>
             <input 
                 type="password" 
                 placeholder="Passord" 
-                value="TEST"
+                value="${model.viewState.login.password}"
                 oninput="model.viewState.login.password=this.value"
             />
+            <br>
             <button onclick="login()">Logg inn</button>
             <div id="message"></div>
         `;
     } else {
-        html = `
-            <h2>Velkommen, TEST</h2>
+        container.innerHTML = `
+            <h2>Velkommen, ${model.app.currentUser}</h2>
             <button onclick="logout()">Logg ut</button>
         `;
     }
-    container.innerHTML= html
 }
