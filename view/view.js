@@ -16,16 +16,3 @@ function updateView(){
         container.innerHTML = "something went wrong"
     }
 }
-
-function showMainFeedPage(){
-    
-}
-function showAddPlacesPage(){
-
-}
-function showPlacePage(){
-
-}
-function showRegisterUserPage(){
-
-}
