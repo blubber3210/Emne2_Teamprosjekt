@@ -3,6 +3,7 @@
 const model = {
     app: {
         currentPage: 'loginPage',
+        currentUser: null,
 
         page: [
             'loginPage',

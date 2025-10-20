@@ -17,3 +17,15 @@ function updateView(){
     }
 }
 
+function showMainFeedPage(){
+    
+}
+function showAddPlacesPage(){
+
+}
+function showPlacePage(){
+
+}
+function showRegisterUserPage(){
+
+}
