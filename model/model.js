@@ -52,6 +52,12 @@ const model = {
                 password: '',
                 placesAdded: [0, 1],
             },
+            {
+                id: 1,
+                userName: 'Test',
+                password: 'test',
+                placesAdded: [1],
+            },
         ],
 
         category: [
