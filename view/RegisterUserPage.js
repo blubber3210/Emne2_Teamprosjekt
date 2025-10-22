@@ -1,4 +1,4 @@
-function drawRegisterUser() {
+function showRegisterUserPage() {
     container.innerHTML = /*HTML*/ `
         <div>
             <h1>Lag ny bruker</h1>
