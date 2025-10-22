@@ -17,6 +17,7 @@ const model = {
     viewState: {
         registerUser: {
             username: '',
+            email: '',
             password: '',
             repeatPassword: '',
         },
