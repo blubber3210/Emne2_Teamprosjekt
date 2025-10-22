@@ -1,6 +1,12 @@
 function login() {
     const login = model.viewState.login;
-    const user = model.data.users.find(u => u.userName === login.userName && u.password === login.password);
+    const usernameInput = login.userName.trim().toLowerCase();
+    const passwordInput = login.password;
+
+    const user = model.data.users.find(
+        u => u.userName.toLowerCase() === usernameInput && u.password === passwordInput
+    );
+    
     const messageEl = document.getElementById('message');
     if (user) {
         model.app.currentUser = user.userName;
