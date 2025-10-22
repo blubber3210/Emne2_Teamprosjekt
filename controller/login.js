@@ -13,7 +13,7 @@ function login() {
 
 function logout() {
     model.app.currentUser = null;
-    model.inputs.login.username = '';
-    model.inputs.login.password = '';
+    model.viewState.username = '';
+    model.viewState.password = '';
     updateView();
 }
