@@ -16,6 +16,7 @@ function showLoginPage() {
                 oninput="model.viewState.login.password=this.value"
             />
             <br>
+            <button onclick="drawRegisterUser()">Registrer</button>
             <button onclick="login()">Logg inn</button>
             <div id="message"></div>
         `;
