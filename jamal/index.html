@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+   <meta charset="UTF-8">
+   <title>Spooky testing</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+
+
+       <!-- TOPP/intro -->
+       <div class="top">
+           <h1 id="title">Stedets navn</h1>
+           <p id="address">Adresse</p>
+           <button class="filter-btn" onclick="View.showFilterMenu()">Filtrer kategori</button>
+           <div id="filter-menu"></div>
+           <p id="rating">☕ 0/5 | 🍽️ 0/5</p>
+       </div>
+
+
+       <!-- Bilde i midten med knappa -->
+       <div class="middle">
+           <button class="prev" onclick="Controller.prevImage()">&#8592;</button>
+           <img id="carousel-img" src="" alt="Bilde">
+           <button class="next" onclick="Controller.nextImage()">&#8594;</button>
+       </div>
+
+
+       <!-- BESKRIVELSE/rating-->
+       <div class="description">
+           <p id="description">Beskrivelse av stedet</p>
+       </div>
+
+
+       <!-- BUNN KNAPPER -->
+       <div class="buttons">
+           <button onclick="Controller.goBack()">Tilbake</button>
+           <button onclick="Controller.openMenu()">Meny</button>
+           <button onclick="Controller.sharePage()">Del/Kopier</button>
+           <button id="like-btn" onclick="Controller.toggleLike()">🤍</button>
+       </div>
+
+
+   </div>
+
+
+   <script src="model.js"></script>
+   <script src="view.js"></script>
+   <script src="controller.js"></script>
+</body>
+</html>
