@@ -1,4 +1,5 @@
 function showMainFeedPage() {
+    container.innerHTML = '';
     // Raw elements
     let feedPageWrapper = document.createElement("div");
     let addPlaceBtn = document.createElement("button");

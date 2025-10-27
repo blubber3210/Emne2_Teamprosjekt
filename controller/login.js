@@ -10,6 +10,7 @@ function login() {
     const messageEl = document.getElementById('message');
     if (user) {
         model.app.currentUser = user.userName;
+        model.app.currentPage = 'mainFeed';
         updateView();
     } else {
         messageEl.textContent = 'Feil brukernavn eller passord';
