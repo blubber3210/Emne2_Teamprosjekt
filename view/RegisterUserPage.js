@@ -1,5 +1,5 @@
 function showRegisterUserPage() {
-    container.innerHTML = /*HTML*/ `
+    let html = /*HTML*/ `
         <div>
             <h1>Lag ny bruker</h1>
             <div>
@@ -32,4 +32,6 @@ function showRegisterUserPage() {
             <button onclick="addNewUser()">Lag ny bruker</button>
         </div>
     `;
+
+    return html;
 }

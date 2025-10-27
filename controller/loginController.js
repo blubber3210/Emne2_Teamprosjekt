@@ -24,3 +24,9 @@ function logout() {
     model.viewState.password = '';
     updateView();
 }
+
+function loginAsAnonymous(){
+    model.app.currentUser = 'Spooky';
+    model.app.currentPage = 'mainFeed';
+    updateView();
+}

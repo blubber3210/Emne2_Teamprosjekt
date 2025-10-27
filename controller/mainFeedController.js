@@ -3,7 +3,7 @@ function filterPlaces(searchInput) {
     let feedDiv = document.querySelector('#feedDiv');
     let places = model.data.placesList;
     let input = searchInput;
-
+    console.log('kjører filter')
     let feedItem = ''; // String container
     feedDiv.innerHTML = '';
 

@@ -25,7 +25,7 @@ function showAddPlacesPage(){
 
     </div>
     `;
-    container.innerHTML = html;
+    return html; 
 }
 
 // TO DO : 

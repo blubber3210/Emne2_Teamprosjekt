@@ -2,7 +2,7 @@
 
 const model = {
     app: {
-        currentPage: 'loginPage',
+        currentPage: 'mainFeed',
         currentUser: null,
 
         page: [
@@ -50,13 +50,15 @@ const model = {
             {
                 id: 0,
                 userName: 'Spooky',
+                email: 'spooky@email.com',
                 password: '',
                 placesAdded: [0, 1],
             },
             {
                 id: 1,
-                userName: 'Test',
-                password: 'test',
+                userName: '',
+                email: 'test@email.com',
+                password: '',
                 placesAdded: [1],
             },
         ],
@@ -81,7 +83,7 @@ const model = {
                 address: 'Ålebergveien 50A',
                 city: 'Oslo',
                 categoryID: [0, 1],
-                image: 'imgLink',
+                image: 'media/glh.jpg',
                 rateCoffee: 5,
                 rateFood: 5,
                 description: 'Velkommen til GLH Glutenfrihuset - ditt glutenfrie bakeri i OSlo',
@@ -93,7 +95,7 @@ const model = {
                 address: 'En adresse - Veien10B',
                 city: 'Bergen',
                 categoryID: [2, 0],
-                image: 'imgLink',
+                image: 'media/bergen.jpg',
                 rateCoffee: 2,
                 rateFood: 4,
                 description: 'SKIKKELIG dårlig kaffe, men ok bra mat',

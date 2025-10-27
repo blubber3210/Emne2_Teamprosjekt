@@ -2,17 +2,28 @@ const container = document.getElementById("container");
 
 updateView();
 function updateView(){
+    let content = ``;
     if (model.app.currentPage == "loginPage"){
-        showLoginPage()
+        content = showLoginPage()
     } else if (model.app.currentPage == "mainFeed"){
-        showMainFeedPage()
+        content = showMainFeedPage()
     } else if (model.app.currentPage == "addPlaces"){
-        showAddPlacesPage()
+        content = showAddPlacesPage()
     } else if (model.app.currentPage == "placePage"){
-        showPlacePage()
+        content = showPlacePage()
     } else if (model.app.currentPage == "registerUser"){
-        showRegisterUserPage()
+        content = showRegisterUserPage()
     } else {
-        container.innerHTML = "something went wrong"
+        content = "something went wrong"
     }
+
+    container.innerHTML = /*HTML*/ `
+    <header>${header()}</header>
+    <main>${content}</main>
+    `;
+}
+
+function header(){
+    html = `spooky gluten`;
+    return html;
 }
