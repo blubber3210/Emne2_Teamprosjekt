@@ -17,6 +17,11 @@ function showLoginPage() {
                 oninput="model.viewState.login.password=this.value"
             />
             <br>
+            <div>
+                <input type="checkbox" id="anonymousCheck" 
+                       onchange="model.viewState.login.anonymous = this.checked">
+                <label for="anonymousCheck">Vis meg som Spooky</label>
+            </div>
             <button onclick="changePage('registerUser')">Registrer</button>
             <button onclick="login()">Logg inn</button>
             <div id="message"></div>

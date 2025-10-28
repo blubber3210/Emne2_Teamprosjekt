@@ -2,14 +2,16 @@ function login() {
     const login = model.viewState.login;
     const usernameInput = login.userName.trim().toLowerCase();
     const passwordInput = login.password;
+    const anonymous = login.anonymous;
 
     const user = model.data.users.find(
         u => u.userName.toLowerCase() === usernameInput && u.password === passwordInput
     );
     
     const messageEl = document.getElementById('message');
+    
     if (user) {
-        model.app.currentUser = user.userName;
+        model.app.currentUser = anonymous ? 'Spooky bruker' : user.userName;
         model.app.currentPage = 'mainFeed';
         updateView();
     } else {
