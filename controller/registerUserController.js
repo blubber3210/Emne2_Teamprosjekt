@@ -3,7 +3,7 @@ function addNewUser() {
 
     model.data.users.push(
         {
-            id: 10,
+            id: getRandomId(0, 100),
             userName: newUser.username,
             email: newUser.email,
             password: newUser.password,
@@ -22,6 +22,24 @@ function emptyRegisterUserInput() {
     model.viewState.registerUser.repeatPassword = '';
 }
 
+function getRandomId(min, max) {
+    let range = max - min + 1;
+    let randomId = Math.floor(Math.random() * range);
+    let result = randomId + min;
+    return result;
+}
+// console.log(getRandomId(0,100));
+
+//function checkPassword() {
+    //let password = model.viewState.registerUser.password;
+    //let repeatPassword = model.viewState.registerUser.repeatPassword;
+    
+    //if (password === repeatPassword) {
+        //return true;
+    //} else {
+        //return false;
+    //}
+//}
 
 /* 
 - Få den nye brukeren i data
