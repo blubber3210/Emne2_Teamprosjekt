@@ -39,13 +39,13 @@
 
 function showMainFeedPage(){
     let html = /*HTML*/ `
-    <button>Legg til plass</button>
+    <button onclick="changePage('addPlaces')">Legg til plass</button>
     <input 
         placeholder="Søk by/adresse" 
         oninput=${model.viewState.mainFeed.search = this.value}
         type="text">
     <button onclick="filterPlaces(model.viewState.mainFeed.search)">search</button>
-    <div id="feed">
+    <div id="feedDiv">
     ${drawFeed()}
     </div>
     `;
@@ -65,9 +65,24 @@ function drawFeed(){
         ${places[i].city}<br>
         <img src="${places[i].image}"><br>
         ${places[i].description}<br>
+        <button onclick="goToPlacePage(${places[i].id})">go to place page</button>
         
         </div>`; 
     }
 
     return html;
 }
+// egentlig en controller funksjon
+function goToPlacePage(selectedPlaceId){
+    let placeID = selectedPlaceId;
+    model.app.selectedPlace = model.data.placesList[placeID];
+    model.app.currentPage = 'placePage';
+    updateView()
+}
+
+// burde være en universell controller
+function changePage(newPage) {
+    model.app.currentPage = newPage;
+    updateView();
+}
+

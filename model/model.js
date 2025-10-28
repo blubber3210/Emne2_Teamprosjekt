@@ -4,6 +4,7 @@ const model = {
     app: {
         currentPage: 'mainFeed',
         currentUser: null,
+        selectedPlace: 0,
 
         page: [
             'loginPage',
