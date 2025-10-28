@@ -34,8 +34,8 @@ function showPlacePage(){
 }
 
 function drawCategories(){
-    
     let html = ``;
+    
     for (let i = 0; i < model.app.selectedPlace.categoryID.length; i++){
         html += `category number: ${model.app.selectedPlace.categoryID[i]} <br>`;
     }

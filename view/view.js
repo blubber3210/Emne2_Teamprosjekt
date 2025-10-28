@@ -18,12 +18,20 @@ function updateView(){
     }
 
     container.innerHTML = /*HTML*/ `
-    <header>${header()}</header>
+    <header>${header()} 
+    
+    </header>
     <main>${content}</main>
     `;
 }
 
 function header(){
-    html = `spooky gluten`;
+    html = `spooky gluten <br>
+    <button onclick="changePage('loginPage')">loginPage</button>
+    <button onclick="changePage('mainFeed')">mainFeed</button>
+    <button onclick="changePage('addPlaces')">addPlaces</button>
+    <button onclick="goToPlacePage(0)">PlacePage</button>
+    <button onclick="changePage('registerUser')">registerUser</button>
+    `;
     return html;
 }
