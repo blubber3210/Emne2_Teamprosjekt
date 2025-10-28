@@ -17,7 +17,7 @@ function showLoginPage() {
                 oninput="model.viewState.login.password=this.value"
             />
             <br>
-            <button onclick="showRegisterUserPage()">Registrer</button>
+            <button onclick="changePage('registerUser')">Registrer</button>
             <button onclick="login()">Logg inn</button>
             <div id="message"></div>
             <button onclick="loginAsAnonymous()">Fortsett uten bruker</button>
