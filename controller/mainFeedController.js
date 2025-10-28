@@ -11,9 +11,6 @@ function filterPlaces(searchInput) {
         if (places[i].address.toLowerCase().includes(input.toLowerCase()) 
             || places[i].city.toLowerCase().includes(input.toLowerCase())) 
         {
-            // Loop through posts data via createFeedItem function
-            // 🛠️🛠️🛠️🛠️🛠️🛠️🛠️🛠️🛠️
-            // and append to feed div, or:
             feedItem = `
             <div>
                 ${places[i].address}
