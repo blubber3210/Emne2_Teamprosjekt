@@ -1,24 +1,25 @@
-
-function showMainFeedPage(){
+function showMainFeedPage() {
     let html = /*HTML*/ `
     <button onclick="changePage('addPlaces')">Legg til plass</button>
     <input 
         placeholder="Søk by/adresse" 
         oninput="model.viewState.mainFeed.search = this.value"
         type="text">
-    <button onclick="filterPlaces(model.viewState.mainFeed.search)">search</button>
+    <button onclick="updateView()">search</button>
     <div id="feedDiv">
     ${drawFeed()}
-    </div>
+    </divk>
     `;
 
     return html;
 }
 
-function drawFeed(){
-    let places = model.data.placesList;
+function drawFeed() {
+
+    let places = filterPlaces();
     let html = ``;
-    for (let i = 0; i < places.length; i++){
+
+        for (let i = 0; i < places.length; i++) {
         html += `
         
         <div>
@@ -29,11 +30,8 @@ function drawFeed(){
         ${places[i].description}<br>
         <button onclick="goToPlacePage(${places[i].id})">go to place page</button>
         
-        </div>`; 
+        </div>`;
     }
-
-    return html;
+        return html;
+   
 }
-
-
-

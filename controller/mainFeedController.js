@@ -1,26 +1,22 @@
-function filterPlaces(searchInput) {
-    // DOM and data reference
-    let feedDiv = document.querySelector('#feedDiv');
+function filterPlaces() {
     let places = model.data.placesList;
-    let input = searchInput;
-    console.log('kjører filter')
-    let feedItem = ''; // String container
-    feedDiv.innerHTML = '';
+    let filteredPlaces = [];
+    let input;
 
-    for (let i = 0; i < places.length; i++) {
-        if (places[i].address.toLowerCase().includes(input.toLowerCase()) 
-            || places[i].city.toLowerCase().includes(input.toLowerCase())) 
-        {
-            feedItem = `
-            <div>
-                ${places[i].address}
-            </div>
-            <img src="${places[i].image}">         
-
-            `
-            feedDiv.innerHTML += feedItem;
+    if (model.viewState.mainFeed.search) {
+        input = model.viewState.mainFeed.search;
+        for (let i = 0; i < places.length; i++) {
+            if (
+                places[i].address.toLowerCase().includes(input.toLowerCase()) ||
+                places[i].city.toLowerCase().includes(input.toLowerCase())
+            ) {
+                filteredPlaces.push(places[i]);
+            }
         }
-        else (console.log("No further results"));
+        return filteredPlaces;
+
+
+    } else if (!model.viewState.mainFeed.search) {
+        return model.data.placesList;
     }
 }
-
