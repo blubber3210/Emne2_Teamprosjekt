@@ -2,7 +2,7 @@ function showAddPlacesPage(){
     let html = /*HTML*/ `
     <div class="addPlacePage">
     <h2 class="addPlaceHeader">Legg til sted</h2>
-        <div class="inputFields">
+        <div class="addPlaceInputField">
             Navn:<br>
             <input type="text" oninput=${model.viewState.addPlace.title = this.value}><br> 
             By:<br>
