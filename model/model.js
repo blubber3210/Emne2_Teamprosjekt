@@ -24,13 +24,12 @@ const model = {
         },
 
         mainFeed: {
-            search: '',
+            search: 'e',
         },
 
         login: {
             userName: '',
             password: '',
-            anonymous: false,
         },
 
         addPlace: {
@@ -101,6 +100,18 @@ const model = {
                 rateCoffee: 2,
                 rateFood: 4,
                 description: 'SKIKKELIG dårlig kaffe, men ok bra mat',
+            },
+            {
+                id: 2,
+                userID: 0,
+                title: 'Cupcakehuset Jåblom Bakst',
+                address: 'Haraldsgata 191',
+                city: 'Haugesund',
+                categoryID: [2, 0],
+                image: 'media/cupcake.png',
+                rateCoffee: 2,
+                rateFood: 5,
+                description: 'Knall gode muffins av alle slag',
             },
         ],
     },
