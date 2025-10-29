@@ -24,7 +24,7 @@ const model = {
         },
 
         mainFeed: {
-            search: 'e',
+            search: '',
         },
 
         login: {

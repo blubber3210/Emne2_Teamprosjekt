@@ -15,23 +15,28 @@ function showMainFeedPage() {
 }
 
 function drawFeed() {
-
     let places = filterPlaces();
     let html = ``;
 
-        for (let i = 0; i < places.length; i++) {
+    for (let i = 0; i < places.length; i++) {
         html += `
         
-        <div>
-        ${places[i].title}<br>
-        ${places[i].address}<br>
-        ${places[i].city}<br>
-        <img src="${places[i].image}"><br>
-        ${places[i].description}<br>
-        <button onclick="goToPlacePage(${places[i].id})">go to place page</button>
+        <div class="feedItem">
+            <div class="filteredListImg"> 
+        <img src="${places[i].image}">
+            </div>
+            <br>
+
+            <div class="filteredListInfo">
+           ${places[i].title}<br>
+            <p>${"⭐".repeat(places[i].rateFood)}<br>
+            ${places[i].city},
+            ${places[i].address}<br>
+            <button onclick="goToPlacePage(${places[i].id})">
+            go to place page</button>
+            </div>
         
         </div>`;
     }
-        return html;
-   
+    return html;
 }
