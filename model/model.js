@@ -30,6 +30,7 @@ const model = {
         login: {
             userName: '',
             password: '',
+            anonymous: false,
         },
 
         addPlace: {
