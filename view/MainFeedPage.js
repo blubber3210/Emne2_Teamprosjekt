@@ -8,7 +8,7 @@ function showMainFeedPage() {
     <button onclick="updateView()">search</button>
     <div id="feedDiv">
     ${drawFeed()}
-    </divk>
+    </div>
     `;
 
     return html;
