@@ -1,0 +1,14 @@
+#feedDiv {
+  display: grid;
+}
+.filteredListImg {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+.feedItem {
+  display: grid;
+}
+.filteredListInfo {
+  display: grid;
+}
