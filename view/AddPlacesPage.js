@@ -4,42 +4,39 @@ function showAddPlacesPage(){
     <h2 class="addPlaceHeader">Legg til sted</h2>
         <div class="addPlaceInputField">
             Navn:<br>
-            <input type="text" oninput=${model.viewState.addPlace.title = this.value}><br> 
+            <input 
+                type="text" 
+                onchange="model.viewState.addPlace.title = this.value"
+                value="${model.viewState.addPlace.title ?? ""}">
+                <br> 
             By:<br>
-            <input type="text" oninput=${model.viewState.addPlace.city = this.value}><br>
+            <input 
+                type="text" 
+                onchange="model.viewState.addPlace.city = this.value"
+                value="${model.viewState.addPlace.city ?? ""}">
+                <br>
             Adresse:<br>
-            <input type="text" oninput=${model.viewState.addPlace.address = this.value}><br>
+            <input 
+                type="text" 
+                onchange="model.viewState.addPlace.address = this.value"
+                value="${model.viewState.addPlace.address ?? ""}">
+                <br>
         </div>
         <div>
             <div>
                 Kategori: <br>
-                <input type="checkbox" onchange="categoryInput('cafe')"> cafe
-                <input type="checkbox" onchange="categoryInput('restaurant')"> restaurant
-                <input type="checkbox" onchange="categoryInput('bakery')"> bakeri
+                ${drawAddCategories()}
             </div>
+
             <label for="imageUpload">Last opp bilde:</label>
             <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
             
             <div class="star-rating">
-                Kaffe:
-                <span class="star" onclick="ratingCoffeeInput(1)">★</span>
-                <span class="star" onclick="ratingCoffeeInput(2)">★</span>
-                <span class="star" onclick="ratingCoffeeInput(3)">★</span>
-                <span class="star" onclick="ratingCoffeeInput(4)">★</span>
-                <span class="star" onclick="ratingCoffeeInput(5)">★</span>
+            ${drawStars()}
             </div>
-            <div class="star-rating">
-                Mat:
-                <span class="star" onclick="ratingFoodInput(1)">★</span>
-                <span class="star" onclick="ratingFoodInput(2)">★</span>
-                <span class="star" onclick="ratingFoodInput(3)">★</span>
-                <span class="star" onclick="ratingFoodInput(4)">★</span>
-                <span class="star" onclick="ratingFoodInput(5)">★</span>
-            </div>
-
 
             Beskrivelse: <br>
-            <input type="text" oninput=${model.viewState.addPlace.description = this.value}> <br>
+            <input type="text" oninput="${model.viewState.addPlace.description = this.value}"> <br>
             <input type="checkbox" onchange="submitAnonymouslySelected()">Legg ut som spooky <br>
             <button onclick="submitPlaceInputs()">Legg ut</button>
         </div>
@@ -48,7 +45,74 @@ function showAddPlacesPage(){
     return html; 
 }
 
-// TO DO : 
-// alle inputs får lagt sine verdier i view state modellen
-// legg ut knappen - pusher verdiene til data arrayet 
-// tømme verdiene i view state 
+
+function drawAddCategories(){
+    let html = ``;
+    for(let i = 0; i < model.data.category.length; i++){
+        html += /*HTML*/ `
+        <input type="checkbox" onchange="changeCategoryCheckbox(this, ${i})"> ${model.data.category[i].name}
+        `;
+    }
+    return html;
+}
+
+
+function drawStars(){
+    let html = /*HTML*/ `
+        Kaffe:
+                <span class="star" onclick="ratingInput('coffee', 1)">★</span>
+                <span class="star" onclick="ratingInput('coffee', 2)">★</span>
+                <span class="star" onclick="ratingInput('coffee', 3)">★</span>
+                <span class="star" onclick="ratingInput('coffee', 4)">★</span>
+                <span class="star" onclick="ratingInput('coffee', 5)">★</span>
+            <br>
+                Mat:
+                <span class="star" onclick="ratingInput('food', 1)">★</span>
+                <span class="star" onclick="ratingInput('food', 2)">★</span>
+                <span class="star" onclick="ratingInput('food', 3)">★</span>
+                <span class="star" onclick="ratingInput('food', 4)">★</span>
+                <span class="star" onclick="ratingInput('food', 5)">★</span>
+    
+    `;
+
+    return html;
+}
+
+
+// function drawStars(){
+//     let html = ``;
+    
+//     if (model.viewState.addPlace.rateCoffee == null && model.viewState.addPlace.rateFood == null){
+//     html = /*HTML*/ `
+//         Kaffe:
+//                 <span class="star" onclick="ratingInput('coffee', 1)">★</span>
+//                 <span class="star" onclick="ratingInput('coffee', 2)">★</span>
+//                 <span class="star" onclick="ratingInput('coffee', 3)">★</span>
+//                 <span class="star" onclick="ratingInput('coffee', 4)">★</span>
+//                 <span class="star" onclick="ratingInput('coffee', 5)">★</span>
+//             <br>
+//                 Mat:
+//                 <span class="star" onclick="ratingInput('food', 1)">★</span>
+//                 <span class="star" onclick="ratingInput('food', 2)">★</span>
+//                 <span class="star" onclick="ratingInput('food', 3)">★</span>
+//                 <span class="star" onclick="ratingInput('food', 4)">★</span>
+//                 <span class="star" onclick="ratingInput('food', 5)">★</span>
+    
+//     `;} else {
+//         html = `something else`;
+//     }
+//     return html;
+// }
+
+
+
+
+// // FOR LOOPS EVT
+// function drawCoffeeStars(){
+//     let html = `Kaffe:`;
+//     for(let i = 1; i<6; i++){
+//         html += `<span class="star" onclick="ratingInput('coffee', '${[i]}'">★</span>`;
+//     }
+//     return html;
+// }
+

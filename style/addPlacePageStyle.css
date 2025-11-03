@@ -6,6 +6,9 @@ div.addPlacePage {
     border: black 1px solid;
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h2.addPlaceHeader {
@@ -20,6 +23,11 @@ h2.addPlaceHeader {
 .star {
   color: #ccc; /* Default star color */
   font-size: 20px;
+}
+
+.star:hover {
+  cursor: pointer;
+  color: gold;
 }
 
 .starFilled {
