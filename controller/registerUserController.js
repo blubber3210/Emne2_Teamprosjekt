@@ -3,7 +3,7 @@ function addNewUser() {
 
     model.data.users.push(
         {
-            id: getRandomId(0, 100),
+            id: getRandomId(),
             userName: newUser.username,
             email: newUser.email,
             password: newUser.password,
@@ -22,24 +22,52 @@ function emptyRegisterUserInput() {
     model.viewState.registerUser.repeatPassword = '';
 }
 
-function getRandomId(min, max) {
-    let range = max - min + 1;
-    let randomId = Math.floor(Math.random() * range);
-    let result = randomId + min;
-    return result;
+function getRandomId() {
+    let randomId = Math.floor(Math.random() * 999);
+    for (let i = 0; i < model.data.users.length; i++) {
+        if (randomId == model.data.users[i].id) {
+            getRandomId();
+        }
+    } 
+    console.log("randomId: ", randomId)
+    return randomId;
 }
-// console.log(getRandomId(0,100));
 
-//function checkPassword() {
-    //let password = model.viewState.registerUser.password;
-    //let repeatPassword = model.viewState.registerUser.repeatPassword;
+
+function checkPassword() {
+    let password = model.viewState.registerUser.password;
+    let repeatPassword = model.viewState.registerUser.repeatPassword;
     
-    //if (password === repeatPassword) {
-        //return true;
-    //} else {
-        //return false;
-    //}
-//}
+    if (password === repeatPassword) {
+        return true;
+    } else {
+        alert("passordene stemmer ikke")
+        return false;
+    }
+}
+
+function checkUsername() {
+    let username = model.viewState.registerUser.username;
+    
+    for (let i = 0; i < model.data.users.length; i++) {
+        if (username === model.data.users[i].userName) {
+            alert("brukernavn er allerede tatt")
+            return false;
+        }
+    }
+
+}
+
+function checkEmail() {
+    let email = model.viewState.registerUser.email;
+
+    for (let i = 0; i < model.data.users.length; i++) {
+        if (email === model.data.users[i].email) {
+            alert("eposten er allerede i bruk")
+            return false;
+        }
+    }
+}
 
 /* 
 - Få den nye brukeren i data

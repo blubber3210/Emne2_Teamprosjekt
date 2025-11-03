@@ -29,7 +29,7 @@ function showRegisterUserPage() {
                 type="password"
                 />
             </div>
-            <button onclick="addNewUser()">Lag ny bruker</button>
+            <button onclick="showLoginPage()">Lag ny bruker</button>
         </div>
     `;
 
