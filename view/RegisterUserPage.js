@@ -1,37 +1,39 @@
 function showRegisterUserPage() {
-    let html = /*HTML*/ `
+  let html = /*HTML*/ `
         <div>
             <h1>Lag ny bruker</h1>
             <div>
                 <h2>Brukernavn</h2>
-                <input 
-                placeholder="Ditt brukernavn" 
+                <input
+                placeholder="Ditt brukernavn"
                 onchange="model.viewState.registerUser.username = this.value"
-                value="${model.viewState.registerUser.username ?? ""}" 
+                value="${model.viewState.registerUser.username ?? ''}"
                 />
+                <div id="userNameError" style="color: red;"></div>
                 <h2>Mailadresse</h2>
-                <input 
+                <input
                 placeholder="Din mailadresse"
                 onchange="model.viewState.registerUser.email = this.value"
-                value="${model.viewState.registerUser.email ?? ""}"
+                value="${model.viewState.registerUser.email ?? ''}"
                 />
                 <h2>Passord</h2>
-                <input 
+                <input
                 placeholder="Ditt passord"
                 onchange="model.viewState.registerUser.password = this.value"
-                value="${model.viewState.registerUser.password ?? ""}"
+                value="${model.viewState.registerUser.password ?? ''}"
                 type="password"
                 />
-                <input 
+                <input
                 placeholder="Gjenta passord"
                 onchange="model.viewState.registerUser.repeatPassword = this.value"
-                value="${model.viewState.registerUser.repeatPassword ?? ""}"
+                value="${model.viewState.registerUser.repeatPassword ?? ''}"
                 type="password"
                 />
+                <div id="repeatPwError"style="color: red;"></div>
             </div>
-            <button onclick="showLoginPage()">Lag ny bruker</button>
+            <button onclick="verifyRegistration()">Lag ny bruker</button>
         </div>
     `;
 
-    return html;
+  return html;
 }

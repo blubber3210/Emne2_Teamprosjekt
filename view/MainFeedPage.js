@@ -20,6 +20,7 @@ function showMainFeedPage() {
 function drawFeed() {
   let places = filterPlaces();
   let searchword = model.viewState.mainFeed.search;
+
   let isSearching = searchword ? 'Resultater for: ' : '';
   let html = ``;
 
@@ -42,5 +43,15 @@ function drawFeed() {
 
         </div>`;
   }
+  if (model.viewState.search) {
+  }
   return isSearching + searchword + html;
 }
+
+function drawFilterMenu() {
+  let options = document.createElement('div');
+  let tagFilterBtn = document.createElement('button');
+  tagFilterBtn.textContent = Tags;
+}
+
+function tagFilterClickHandler() {}
