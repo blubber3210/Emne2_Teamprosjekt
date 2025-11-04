@@ -17,6 +17,16 @@ function showMainFeedPage() {
   return html;
 }
 
+function deleteButton(chosenID){
+  let html = '';
+  if(model.app.isAdmin){
+    html = /*HTML*/`
+      <button onclick="deleteItem(chosenID)">Slett</button>
+    `;
+  }
+  return html;
+}
+
 function drawFeed() {
   let places = filterPlaces();
   let searchword = model.viewState.mainFeed.search;
@@ -28,6 +38,7 @@ function drawFeed() {
     html += `
 
         <div class="feedItem">
+          ${deleteButton(places[i].id)}
             <div class="filteredListImg">
         <img class="filteredListImg" src="${places[i].image}">
             </div>
