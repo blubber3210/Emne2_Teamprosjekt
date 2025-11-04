@@ -5,6 +5,7 @@ const model = {
         currentPage: 'mainFeed',
         currentUser: null,
         selectedPlace: 0,
+        isAdmin: false,
 
         page: [
             'loginPage',
@@ -51,17 +52,27 @@ const model = {
         users: [
             {
                 id: 0,
-                userName: 'Spooky',
+                userName: 'Anita',
                 email: 'spooky@email.com',
-                password: '',
+                password: 'Bjarne007',
                 placesAdded: [0, 1],
+                isAdmin: true,
+            },
+            {
+                id: 1,
+                userName: 'Spooky',
+                email: 'test@email.com',
+                password: '',
+                placesAdded: [1],
+                isAdmin: false,
             },
             {
                 id: 1,
                 userName: '',
-                email: 'test@email.com',
+                email: '',
                 password: '',
-                placesAdded: [1],
+                placesAdded: [0],
+                isAdmin: false,
             },
         ],
 
