@@ -25,18 +25,26 @@ function showLoginPage(){
                     oninput="model.viewState.login.password=this.value"/>
                 <br>
             </div>
-            <div class="showLoginPage"><!-- Knapper for registrering og innlogging -->
-                <button class="showLoginContainer" onclick="changePage('registerUser')">Registrer</button>
-                <button class="showLoginContainer" onclick="login()">Logg inn</button>
+            <div><!-- Knapper for registrering og innlogging -->
+                <button class="showLoginButton" onclick="changePage('registerUser')">Registrer</button>
+                <button class="showLoginButton" onclick="login()">Logg inn</button>
             </div>
-            <div class="showLoginPage"><!-- Checkbox for anonym innlogging -->
-                <input 
-                    type="checkbox" 
-                    id="anonymousCheck" 
-                    onchange="model.viewState.login.anonymous = this.checked"/>
-                <label for="anonymousCheck">Vis meg som Spooky</label>
-                <br>
-                <button class="showLoginContainer" onclick="loginAsAnonymous()">Fortsett uten bruker</button> <!-- Ekstra knapp for å fortsette uten bruker -->
+            <br>
+            <div class="anonymousCheck"><!-- Checkbox for anonym innlogging -->
+                <label class="checkbox">
+                    <input class="checkbox__trigger visuallyhidden" type="checkbox" id="anonymousCheck" onchange="model.viewState.login.anonymous = this.checked"/>
+                    <span class="checkbox__symbol">
+                        <svg aria-hidden="true" class="icon-checkbox" width="28px" height="28px" viewBox="0 0 28 28" version="1" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 14l8 7L24 7"></path>
+                        </svg>
+                    </span>
+                    <p class="checkbox__textwrapper">Vis meg som Spooky</p>
+                </label>
+            </div>
+            <br>
+            <br>
+            <div>
+                <button class="showLoginButtonAnonymouse" onclick="loginAsAnonymous()">Fortsett uten bruker</button> <!-- Ekstra knapp for å fortsette uten bruker -->
                 <div id="loginErrorMessage"></div> <!-- Område der feilmeldinger vises -->
             </div>
         </div>
@@ -49,7 +57,7 @@ function showLoginPage(){
                     <br>
                     ${model.app.currentUser}
                 </h2>
-                <button class="showLoginContainer" onclick="logout()">Logg ut</button>
+                <button class="showLoginButton" onclick="logout()">Logg ut</button>
             </div>
         `;
     }
