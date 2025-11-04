@@ -67,3 +67,11 @@ function emptyAddPlaceInputs(){
     model.viewState.addPlace.rateFood = null;
     model.viewState.addPlace.description = '';
 }
+
+// To do: 
+// User ID 
+// IMAGE 
+
+// nice to have: 
+// evt fix kategori greia
+// stjernene 
