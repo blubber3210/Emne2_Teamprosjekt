@@ -1,18 +1,6 @@
-div.addPlaceInputField {
-    background-color: antiquewhite;
-}
-
-div.addPlacePage {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 h2.addPlaceHeader {
     text-align: center;
     font-weight: 100;
-}
-
-.star-rating {
-    background-color: aliceblue;
 }
 
 .star {
@@ -28,3 +16,8 @@ h2.addPlaceHeader {
 .starFilled {
   color: gold; /* Filled star color */
 }
+
+div.addPlaceSection {
+  margin-bottom: 5px;
+}
+

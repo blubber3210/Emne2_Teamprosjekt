@@ -1,39 +1,37 @@
 
-// Denne funskjonen funker ikke: 
-function changeCategoryCheckbox(checkbox, categoryIndex){
+function changeCategoryCheckbox(checkbox, categoryId){ // sjekker hvis option allerede er valgt
     if (!checkbox.checked){
-        removeCategory(categoryIndex)
+        removeCategory(categoryId)
     } else {
-        addCategory(categoryIndex)
+        addCategory(categoryId)
     }
     console.log(model.viewState.addPlace.categoryID)
 }
 
-function addCategory(categoryIndex){
-    model.viewState.addPlace.categoryID.push(categoryIndex)
+function addCategory(categoryId){ // BUGGER LITT - legger til kategori ID
+    model.viewState.addPlace.categoryID.push(categoryId)
     console.log(model.viewState.addPlace.categoryID)
 }
 
-function removeCategory(categoryIndex){
-    model.viewState.addPlace.categoryID.splice(categoryIndex)
+function removeCategory(categoryId){ // BUGGER LITT - fjerner kategori ID
+    model.viewState.addPlace.categoryID.splice(categoryId, 1)
     console.log(model.viewState.addPlace.categoryID)
 }
 
 
-
-function ratingInput(item, rating){
+function ratingInput(item, rating){ // registrerer rating av food og coffee
     if(item == 'coffee'){
         model.viewState.addPlace.rateCoffee = rating;
-        console.log('coffee rating is' + model.viewState.addPlace.rateCoffee);
+        console.log('coffee rating is ' + model.viewState.addPlace.rateCoffee);
     } else if (item == 'food'){
         model.viewState.addPlace.rateFood = rating;
-        console.log('food rating is' + model.viewState.addPlace.rateFood);
+        console.log('food rating is ' + model.viewState.addPlace.rateFood);
     } else {
         console.log('rating error')
     }
 }
 
-function submitPlaceInputs(){
+function submitPlaceInputs(){ // pusher mellomlagring til data
     let newPlace = model.viewState.addPlace;
     let newID = model.data.placesList.length;
 
