@@ -1,13 +1,14 @@
 function showMainFeedPage() {
   let html = /*HTML*/ `
-  <div class="feedControls"
-    <button onclick="changePage('addPlaces')">➕ Legg til sted</button>
+  <div class="feedControls">
+    <button onclick="changePage('addPlaces')"> ➕ Legg til sted</button>
     <br>
     <input
         placeholder="Søk by/adresse"
         oninput="model.viewState.mainFeed.search = this.value"
         type="text">
     <button onclick="updateView()">🔍</button>
+    </div>
     <div id="feedDiv">
     ${drawFeed()}
     </div>
@@ -26,10 +27,9 @@ function drawFeed() {
     html += `
 
         <div class="feedItem">
-            <div>
+            <div class="filteredListImg">
         <img class="filteredListImg" src="${places[i].image}">
             </div>
-            <br>
 
             <div class="filteredListInfo">
            ${places[i].title}<br>

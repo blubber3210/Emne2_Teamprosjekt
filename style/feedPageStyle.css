@@ -6,9 +6,31 @@
   height: 150px;
   object-fit: cover;
 }
-.feedItem {
+
+div.feedItem {
+  border: black 1px solid;
+  margin: 5px;
+  border-radius: 10px;
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:  'img'
+                        'info';
+
 }
+
+div.filteredListImg {
+  grid-area: 'img';
+}
+
+div.filteredListInfo {
+  grid-area: 'info'
+}
+
+.feedItem:hover {
+  border: 2px black solid;
+}
+
 .filteredListInfo {
   display: grid;
 }
