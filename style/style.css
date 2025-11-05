@@ -1,6 +1,55 @@
 #container {
     font-family: Arial, Helvetica, sans-serif;
-    max-width: 400px;
+    max-width: 300px;
+    height: 600px;
     margin-left: auto;
     margin-right: auto;
+    border: black 1px solid;
+    border-radius: 15px;
+    background-color: white;
+    padding: 10px;
+    margin-top: 10px;
+    overflow: auto;
+    /* display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:    'header'
+    'main'
+    'footer'; */
 }
+
+#demoNavigation {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+/* div.header {
+    grid-area: 'header';
+    
+}
+
+div.main {
+    grid-area: 'main';
+}
+
+div.footer {
+    grid-area: 'footer';
+} */
+
+header {
+    text-align: center;
+    padding-bottom: 20px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1000;
+    position: static;
+}
+
+
+body {
+    background-color: darkgray;
+}
+
