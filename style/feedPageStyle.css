@@ -1,10 +1,14 @@
 #feedDiv {
   display: grid;
+  text-align: center;
 }
 .filteredListImg {
-  width: 150px;
+  width: 273px;
   height: 150px;
   object-fit: cover;
+  border-radius: 10px;
+  /* text-align: center; */
+  /* align-items: center; */
 }
 
 div.feedItem {
@@ -13,18 +17,20 @@ div.feedItem {
   border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   grid-template-areas:  'img'
                         'info';
-
+  
 }
 
 div.filteredListImg {
   grid-area: 'img';
+  justify-self: center;
 }
 
 div.filteredListInfo {
-  grid-area: 'info'
+  grid-area: 'info';
+  padding: 5px;
 }
 
 .feedItem:hover {

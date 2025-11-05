@@ -12,7 +12,8 @@ function showPlacePage(){
            <button class="next" onclick="Controller.nextImage()">&#8594;</button>
            
            <!-- rating og kategorier -->
-           <p id="rating">☕ ${selectedPlace.rateCoffee}/5 | 🍽️ ${selectedPlace.rateFood}/5</p>
+           <p id="rating">☕ ${'⭐'.repeat(selectedPlace.rateCoffee)} 
+           <br> 🍽️ ${'⭐'.repeat(selectedPlace.rateFood)} </p>
            <p id="category">${drawCategories()}</p>
 
        </div>
@@ -34,10 +35,12 @@ function showPlacePage(){
 }
 
 function drawCategories(){
-    let html = ``;
+    let html = `kategori:`;
     
     for (let i = 0; i < model.app.selectedPlace.categoryID.length; i++){
-        html += `category number: ${model.app.selectedPlace.categoryID[i]} <br>`;
+        html += `
+        <br>${model.data.category[i].name}
+        `;
     }
     return html; 
     

@@ -184,7 +184,7 @@ const model = {
             {
                 id: 5,
                 userID: 0,
-                title: 'Cafe Acec',
+                title: 'Cafe Avec',
                 address: 'Rådhusgata 4',
                 city: 'Storsteinnes',
                 categoryID: [0, 1],

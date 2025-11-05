@@ -37,19 +37,18 @@ function drawFeed() {
   for (let i = 0; i < places.length; i++) {
     html += `
 
-        <div class="feedItem">
+        <div class="feedItem" onclick="goToPlacePage(${places[i].id})">
           ${deleteButton(places[i].id)}
             <div class="filteredListImg">
         <img class="filteredListImg" src="${places[i].image}">
             </div>
 
             <div class="filteredListInfo">
-           ${places[i].title}<br>
-            <p>${'⭐'.repeat(places[i].rateFood)}<br>
+            <b>${places[i].title} </b>
+            ${'⭐'.repeat(places[i].rateFood)}<br>
             ${places[i].city},
             ${places[i].address}<br>
-            <button onclick="goToPlacePage(${places[i].id})">
-            go to place page</button>
+
             </div>
 
         </div>`;
