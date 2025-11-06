@@ -5,31 +5,27 @@ function showLoginPage(){
         html = /*HTML*/ `<!-- Lager HTML for innloggingsskjemaet -->
         <div class="showLoginPage">
             <img src="media/logo.png" alt="Logo" width="120" height="120">
-            <br>
             <h2 class="howLoginHeader">Logg inn</h2>
             <div class="showLoginPage">
-                Brukernavn<!-- Brukernavn input -->
-                <br>
+                <!-- Brukernavn input -->
                 <input 
+                    class="loginInput"
                     type="text" 
                     placeholder="Brukernavn" 
                     value="${model.viewState.login.userName}"
                     oninput="model.viewState.login.userName=this.value"/>
-                <br> 
-                Passord<!-- Passord input -->
-                <br>
+                <!-- Passord input -->
                 <input 
+                    class="loginInput"
                     type="text" 
                     placeholder="Passord" 
                     value="${model.viewState.login.password}"
                     oninput="model.viewState.login.password=this.value"/>
-                <br>
             </div>
             <div><!-- Knapper for registrering og innlogging -->
                 <button class="showLoginButton" onclick="changePage('registerUser')">Registrer</button>
                 <button class="showLoginButton" onclick="login()">Logg inn</button>
             </div>
-            <br>
             <div class="anonymousCheck"><!-- Checkbox for anonym innlogging -->
                 <label class="checkbox">
                     <input class="checkbox__trigger visuallyhidden" type="checkbox" id="anonymousCheck" onchange="model.viewState.login.anonymous = this.checked"/>
@@ -42,11 +38,10 @@ function showLoginPage(){
                 </label>
             </div>
             <br>
-            <br>
             <div>
                 <button class="showLoginButtonAnonymouse" onclick="loginAsAnonymous()">Fortsett uten bruker</button> <!-- Ekstra knapp for å fortsette uten bruker -->
-                <div id="loginErrorMessage"></div> <!-- Område der feilmeldinger vises -->
             </div>
+            <div id="loginErrorMessage"></div> <!-- Område der feilmeldinger vises -->
         </div>
     `;
     }else{ // Hvis bruker allerede er logget inn
