@@ -5,20 +5,20 @@ function showLoginPage(){
         html = /*HTML*/ `<!-- Lager HTML for innloggingsskjemaet -->
         <div class="showLoginPage">
             <img src="media/logo.png" alt="Logo" width="120" height="120">
-            <h2 class="howLoginHeader">Logg inn</h2>
+            <h2 class="showLoginHeader">Logg inn</h2>
             <div class="showLoginPage">
                 <!-- Brukernavn input -->
                 <input 
                     class="loginInput"
-                    type="text" 
-                    placeholder="Brukernavn" 
+                    type="text"
+                    placeholder="Brukernavn"
                     value="${model.viewState.login.userName}"
                     oninput="model.viewState.login.userName=this.value"/>
                 <!-- Passord input -->
                 <input 
                     class="loginInput"
-                    type="text" 
-                    placeholder="Passord" 
+                    type="password"
+                    placeholder="Passord"
                     value="${model.viewState.login.password}"
                     oninput="model.viewState.login.password=this.value"/>
             </div>

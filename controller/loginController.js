@@ -11,6 +11,7 @@ function login() {
     if (user) {// Hvis brukeren finnes (riktig brukernavn og passord)
         model.app.currentUser = anonymous ? 'Spooky bruker' : user.userName; // Hvis anonym er valgt, logg inn som "Spooky bruker", ellers med ekte brukernavn
         model.app.currentPage = 'mainFeed'; // Gå til mainFeed etter innlogging
+        model.app.isAdmin = user.isAdmin;
         updateView();
     } else {// Hvis brukeren ikke finnes, vis feilmelding
         LEmessageEl.textContent = 'Feil brukernavn eller passord';
