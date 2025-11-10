@@ -29,7 +29,28 @@ function ratingInput(item, rating){ // registrerer rating av food og coffee
     } else {
         console.log('rating error')
     }
+
+    // changeStars(item, rating);
+    // updateView();
 }
+
+// function changeStars(type, clickedStar){
+//     let coffeeStar1 = document.getElementById("starCoffee0");
+//     let coffeeStar2 = document.getElementById("starCoffee1");
+//     let coffeeStar3 = document.getElementById("starCoffee2");
+//     let coffeeStar4 = document.getElementById("starCoffee3");
+//     let coffeeStar5 = document.getElementById("starCoffee4");
+
+//     let foodStar1 = document.getElementById("starFood0");
+//     let foodStar2 = document.getElementById("starFood1");
+//     let foodStar3 = document.getElementById("starFood2");
+//     let foodStar4 = document.getElementById("starFood3");
+//     let foodStar5 = document.getElementById("starFood4");
+    
+//     if (type == "food" && clickedStar == 1){
+//         coffeeStar1.classList.add("starFilled");
+//     }
+// }
 
 function submitPlaceInputs(){ // pusher mellomlagring til data
     let newPlace = model.viewState.addPlace;

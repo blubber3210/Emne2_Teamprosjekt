@@ -1,33 +1,37 @@
 function showAddPlacesPage(){
     let html = /*HTML*/ `
-    <div class="addPlacePage">
+    <div class="addPlaceDiv">
         <h2 class="addPlaceHeader">Legg til sted</h2>
         
-        <div class="addPlaceSection"> <!-- navn, by, adresse, beskrivelse inputs-->
-            <b>Navn:</b><br>
+        <div class="addPlaceInputSection"> <!-- navn, by, adresse, beskrivelse inputs-->
+            Navn:<br>
             <input 
+                class="addPlaceInput"
                 type="text" 
                 onchange="model.viewState.addPlace.title = this.value"
                 value="${model.viewState.addPlace.title ?? ""}"
                 placeholder="Navn på sted">
                 <br> 
-            <b>By:</b><br>
+            By:<br>
             <input 
+                class="addPlaceInput"
                 type="text" 
                 onchange="model.viewState.addPlace.city = this.value"
                 value="${model.viewState.addPlace.city ?? ""}"
                 placeholder="By">
                 <br>
-            <b>Adresse:</b><br>
+            Adresse:<br>
             <input 
+                class="addPlaceInput"
                 type="text" 
                 onchange="model.viewState.addPlace.address = this.value"
                 value="${model.viewState.addPlace.address ?? ""}"
                 placeholder="Adresse">
                 <br>
                 
-            <b>Beskrivelse:</b> <br>
+            Beskrivelse: <br>
             <input 
+                class="addPlaceInput"
                 type="text" 
                 oninput="model.viewState.addPlace.description = this.value"
                 value="${model.viewState.addPlace.description ?? ""}"
@@ -36,28 +40,28 @@ function showAddPlacesPage(){
         </div>
 
 
-        <div class="addPlaceSection"> <!-- kategorier, cafe,bakeri og restaurant -->
-            <b>Kategori:</b><br> 
+        <div class="addPlaceCategorySection"> <!-- kategorier, cafe,bakeri og restaurant -->
+            Kategori:<br> 
             ${drawAddCategories()}
         </div>
         
 
-        <div class="addPlaceSection"> <!-- rating-stjerner, kaffe og mat -->
-            <b>Rating:</b><br>
-            ${drawCoffeeStars()}
+        <div class="addPlaceRatingSection"> <!-- rating-stjerner, kaffe og mat -->
+
+            ${drawCoffeeStars()} <br>
             ${drawFoodStars()}
         </div>
         
 
-        <div class="addPlaceSection"> <!-- last opp bilde -->
-            <label for="imageUpload"><b>Last opp bilde:</b></label>
+        <div class="addPlaceImageSection"> <!-- last opp bilde -->
+            <label for="imageUpload">Last opp bilde:</label>
             <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
         </div>
         
 
-        <div class="addPlaceSection"> <!-- submit, med checkbox for anonym option -->
+        <div class="addPlaceSubmitSection"> <!-- submit, med checkbox for anonym option -->
             <input type="checkbox" onchange="submitAnonymouslySelected()">Legg ut som spooky <br>
-            <button onclick="submitPlaceInputs()">Legg ut</button>
+            <button class="addPlaceButton" onclick="submitPlaceInputs()">Legg ut</button>
         </div>
 
     </div>
@@ -70,7 +74,7 @@ function drawAddCategories(){
 
     for(let i = 0; i < model.data.category.length; i++){
         html += /*HTML*/ `
-        <input type="checkbox" onchange="changeCategoryCheckbox(this, ${i})"> ${model.data.category[i].name} <br>
+        <input type="checkbox" onchange="changeCategoryCheckbox(this, ${i})"> ${model.data.category[i].name}
         `;
     }
 
@@ -83,7 +87,7 @@ function drawCoffeeStars(){
 
     for(let i = 1; i < 6; i++){
         html += `
-        <span class="star" onclick="ratingInput('coffee', ${i})">★</span>
+        <span class="star" id="starCoffee${i}" onclick="ratingInput('coffee', ${i})">★</span>
         `;
     }
 
@@ -95,7 +99,7 @@ function drawFoodStars(){
 
     for(let i = 1; i < 6; i++){
         html += `
-        <span class="star" onclick="ratingInput('food', ${i})">★</span>
+        <span class="star" id="starElement${i}" onclick="ratingInput('food', ${i})">★</span>
         `;
     }
 

@@ -1,7 +1,3 @@
-h2.addPlaceHeader {
-    text-align: center;
-    font-weight: 100;
-}
 
 .star {
   color: #ccc; /* Default star color */
@@ -17,7 +13,83 @@ h2.addPlaceHeader {
   color: gold; /* Filled star color */
 }
 
-div.addPlaceSection {
+.addPlaceDiv {
+  place-items: center;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas: 'header' 'inputs' 'categories' 'rating' 'image' 'submit'; 
+}
+
+h2.addPlaceHeader {
+  grid-area: 'header';
+  text-align: center;
+  font-weight: 100;
+}
+
+
+div.addPlaceInputSection {
+  grid-area: 'inputs';
   margin-bottom: 5px;
 }
 
+
+div.addPlaceCategorySection {
+  grid-area: 'categories';
+  margin-bottom: 5px;
+
+}
+
+div.addPlaceRatingSection {
+  grid-area: 'rating';
+  text-align: left;
+}
+
+div.addPlaceImageSection {
+  grid-area: 'image';
+  margin-bottom: 5px;
+}
+
+
+div.addPlaceSubmitSection {
+  grid-area: 'submit';  
+  margin-bottom: 5px;
+}
+
+
+button.addPlaceButton {
+    background-color: lightgray;
+    border-radius: 8px;
+    border-width: 0;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 12px;
+    text-align: center;
+    width: 150px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.addPlaceInput {
+    background-color: #fff;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    width: 150px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.addPlaceText {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 0.2em;
+}
