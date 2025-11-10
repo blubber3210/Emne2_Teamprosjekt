@@ -7,7 +7,7 @@
     border: black 1px solid;
     border-radius: 15px;
     background-color: #D8ECFF;
-    padding: 0px 10px 10px 0px;
+    padding: 0px 0px 10px 0px;
     margin-top: 10px;
     overflow: auto;
 
@@ -31,6 +31,9 @@ main {
 }
 
 header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding-top: 15px;
     padding-bottom: 20px;
@@ -41,13 +44,18 @@ header {
     /* z-index: 1000; */
     position: fixed;
     background-color: #5B8AB3;
-    /* box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.294); */
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.294);
     width: 300px;
     border-radius: 15px 15px 1px 1px;
-    /* border-bottom: black solid 1px;
-    border-right: black solid 1px; */
+    border-bottom: black solid 1px;
+    /* border-right: black solid 1px; */
     /* padding: 1px 3px 30px 5px; */
     /* height: 20px; */
+}
+
+img.header {
+  width: 30px;
+  margin-right: 10px;
 }
 
 footer {
@@ -60,7 +68,13 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 15px;
+  display: none;
+}
+
+
+/* mulig alt det under her er unødvendig ??? */
+#container::-webkit-scrollbar {
+  display:none;
 }
 
 /* Track */

@@ -1,12 +1,13 @@
 
 .star {
-  color: #ccc; /* Default star color */
+  color: #5B8AB3; /* Default star color */
   font-size: 20px;
 }
 
 .star:hover {
   cursor: pointer;
   color: gold;
+  font-size: 25px;
 }
 
 .starFilled {
@@ -23,9 +24,11 @@
 }
 
 h2.addPlaceHeader {
-  grid-area: 'header';
-  text-align: center;
-  font-weight: 100;
+  font-family: "Roboto Mono", monospace;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 0.2em;
+    color:  #5B8AB3;
 }
 
 
@@ -59,37 +62,38 @@ div.addPlaceSubmitSection {
 
 
 button.addPlaceButton {
-    background-color: lightgray;
+    background-color: #5B8AB3;
     border-radius: 8px;
     border-width: 0;
-    color: #000;
+    color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
     margin: 10px;
     padding: 10px 12px;
     text-align: center;
     width: 150px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Afacad", sans-serif;
 }
 
 
 .addPlaceInput {
-    background-color: #fff;
+    background-color: #E6F3FF;
     border-radius: 8px;
-    border: 2px solid #ccc;
-    color: #000;
+    border: 2px solid #5B8AB3;
+    color: #5B8AB3;
     cursor: pointer;
     display: inline-block;
     margin: 5px;
-    padding: 5px 10px;
+    padding: 10px 12px;
     text-align: center;
     width: 150px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Afacad", sans-serif;
 }
 
 .addPlaceText {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Roboto Mono", monospace;
     font-size: 20px;
-    font-weight: normal;
+    font-weight: 600;
     margin-bottom: 0.2em;
+    color:  #5B8AB3;
 }

@@ -28,7 +28,7 @@ function updateView(){
 }
 
 function header(){
-    html = `spooky gluten <br>
+    html = `<img src="media/logo_inverted.png" class="header"> spooky gluten <br>
     
     `;
     return html;

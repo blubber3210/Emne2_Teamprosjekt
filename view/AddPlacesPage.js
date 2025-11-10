@@ -1,10 +1,10 @@
 function showAddPlacesPage(){
     let html = /*HTML*/ `
     <div class="addPlaceDiv">
-        <h2 class="addPlaceHeader">Legg til sted</h2>
+        <h1 class="addPlaceText" style="font-size: 30px;">Legg til sted</h2>
         
         <div class="addPlaceInputSection"> <!-- navn, by, adresse, beskrivelse inputs-->
-            Navn:<br>
+            <h2 class="addPlaceText">Navn</h2>
             <input 
                 class="addPlaceInput"
                 type="text" 
@@ -12,7 +12,7 @@ function showAddPlacesPage(){
                 value="${model.viewState.addPlace.title ?? ""}"
                 placeholder="Navn på sted">
                 <br> 
-            By:<br>
+            <h2 class="addPlaceText">By</h2>
             <input 
                 class="addPlaceInput"
                 type="text" 
@@ -20,7 +20,7 @@ function showAddPlacesPage(){
                 value="${model.viewState.addPlace.city ?? ""}"
                 placeholder="By">
                 <br>
-            Adresse:<br>
+            <h2 class="addPlaceText">Adresse</h2>
             <input 
                 class="addPlaceInput"
                 type="text" 
@@ -29,7 +29,7 @@ function showAddPlacesPage(){
                 placeholder="Adresse">
                 <br>
                 
-            Beskrivelse: <br>
+            <h2 class="addPlaceText">Beskrivelse</h2>
             <input 
                 class="addPlaceInput"
                 type="text" 
@@ -41,21 +41,22 @@ function showAddPlacesPage(){
 
 
         <div class="addPlaceCategorySection"> <!-- kategorier, cafe,bakeri og restaurant -->
-            Kategori:<br> 
+            <h2 class="addPlaceText">Velg kategorier</h2>
             ${drawAddCategories()}
         </div>
         
 
+        <h2 class="addPlaceText">Rating</h2>
         <div class="addPlaceRatingSection"> <!-- rating-stjerner, kaffe og mat -->
-
             ${drawCoffeeStars()} <br>
             ${drawFoodStars()}
         </div>
         
 
         <div class="addPlaceImageSection"> <!-- last opp bilde -->
-            <label for="imageUpload">Last opp bilde:</label>
-            <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+            <h2 class="addPlaceText">Last opp bilde</h2>
+            <input type="file" id="imageUpload" name="imageUpload" accept="image/*" onchange="readURL(this)">
+            <img src="" alt="no image" id="addPlaceImg" style='width: 100px;'>
         </div>
         
 

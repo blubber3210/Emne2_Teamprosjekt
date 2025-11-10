@@ -52,6 +52,32 @@ function ratingInput(item, rating){ // registrerer rating av food og coffee
 //     }
 // }
 
+function readURL(input){
+    if (input.files && input.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            document.querySelector("#addPlaceImg").setAttribute("src", e.target.result);
+        };
+    
+        reader.readAsDataURL(input.files[0]);
+    }
+ // SPØRSMÅLSTEGN ???? Hvordan lagre bildet og vise det på neste side 
+    document.getElementById("imageUpload").addEventListener('change', function(storeImage){
+        let uploadedImage = event.target.files[0];
+
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            let dataUrl = e.target.result; // Get the data Url
+            let imgElement = document.createElement("img");
+            imgElement.src = dataUrl;
+            document.body.appendChild(imgElement);
+        };
+
+        reader.readAsDataURL(uploadedImage);
+        model.viewState.addPlace.image = uploadedImage;
+    });
+}
+
 function submitPlaceInputs(){ // pusher mellomlagring til data
     let newPlace = model.viewState.addPlace;
     let newID = model.data.placesList.length;
@@ -64,7 +90,7 @@ function submitPlaceInputs(){ // pusher mellomlagring til data
             address: newPlace.address,
             city: newPlace.city,
             categoryID: newPlace.categoryID,
-            image: 'img file if added',
+            image: newPlace.image,
             rateCoffee: newPlace.rateCoffee,
             rateFood: newPlace.rateFood,
             description: newPlace.address,
