@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad&display=swap');
+
 button.registerButton {
-    background-color: lightgray;
+    background-color: #5B8AB3;
     border-radius: 8px;
     border-width: 0;
-    color: #000;
+    color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
     margin: 10px;
     padding: 10px 12px;
     text-align: center;
     width: 150px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Afacad", sans-serif;
 }
 
 .registerDiv {
@@ -19,22 +21,36 @@ button.registerButton {
 }
 
 .registerInput {
-    background-color: #fff;
+    background-color: #E6F3FF;
     border-radius: 8px;
-    border: 2px solid #ccc;
-    color: #000;
+    border: 2px solid #5B8AB3;
+    color: #5B8AB3;
     cursor: pointer;
     display: inline-block;
     margin: 5px;
     padding: 10px 12px;
     text-align: center;
     width: 150px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Afacad", sans-serif;
+}
+
+.registerInput::placeholder {
+  color: #5B8AB3; 
+  opacity: 1; 
 }
 
 .registerText {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Roboto Mono", monospace;
     font-size: 20px;
-    font-weight: normal;
-    margin-bottom: 0.2em
+    font-weight: 600;
+    margin-bottom: 0.2em;
+    color:  #5B8AB3;
+}
+
+.title {
+    font-family: "Roboto Mono", monospace;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 0.2em;
+    color:  #5B8AB3;
 }

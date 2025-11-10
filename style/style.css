@@ -6,10 +6,17 @@
     margin-right: auto;
     border: black 1px solid;
     border-radius: 15px;
-    background-color: white;
+    background-color: #D8ECFF;
     padding: 0px 10px 10px 0px;
     margin-top: 10px;
     overflow: auto;
+
+    /* Bakgrunn med grid */
+    background-color: #D8ECFF; 
+    background-image:
+        linear-gradient(#C8E2FA 1px, transparent 1px),  /* horisontale linjer */
+        linear-gradient(90deg, #C8E2FA 1px, transparent 1px); /* vertikale linjer */
+    background-size: 40px 40px; /* størrelse på rutene */
 }
 
 main {
@@ -23,17 +30,17 @@ main {
     margin-top: 20px;
 }
 
-
 header {
     text-align: center;
     padding-top: 15px;
     padding-bottom: 20px;
-    font-family:'Times New Roman', Times, serif;
+    color: #E6F3FF;
+    font-family:"Roboto Mono", monospace;
     font-size: 20px;
     font-weight: bold;
     /* z-index: 1000; */
     position: fixed;
-    background-color: white;
+    background-color: #5B8AB3;
     /* box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.294); */
     width: 300px;
     border-radius: 15px 15px 1px 1px;
@@ -46,7 +53,6 @@ header {
 footer {
     position: fixed;
 }
-
 
 body {
     background-color: darkgray;

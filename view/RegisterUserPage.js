@@ -2,7 +2,7 @@ function showRegisterUserPage() {
     let html = /*HTML*/ `
         <div class="registerDiv">
             <img src="media/logo.png" alt="Logo" width="120" height="120">
-            <h1>Lag ny bruker</h1>
+            <h1 class="title">Lag ny bruker</h1>
             <div>
                 <h2 class="registerText">Brukernavn</h2>
                 <input
