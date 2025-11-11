@@ -66,7 +66,7 @@ button.showLoginButton {
     background-color: #5B8AB3;
     border-radius: 8px;
     border-width: 0;
-    color: #000;
+    color: #E6F3FF;
     cursor: pointer;
     display: inline-block;
     margin: 10px;
@@ -81,7 +81,7 @@ button.showLoginButton {
 button.showLoginButton:hover,
 div.showLoginButton:focus { 
     background-color: #E6F3FF; /* Knapp hover farge*/
-    color: #000000;
+    color: #5B8AB3;
 }
 
 /* Aktiv knapp (trykket ned) */
@@ -99,8 +99,8 @@ button.showLoginButton:disabled {
 
 /* ==========================Rød knapp for anonym bruker========================== */
 button.showLoginButtonAnonymouse {
-    background: #FF4742; /* Rød farge */
-    border: 1px solid #FF4742;
+    background: #5B8AB3; /* Rød farge */
+    border: 1px solid #000000;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
     color: #E6F3FF;
@@ -120,7 +120,7 @@ button.showLoginButtonAnonymouse {
 button.showLoginButtonAnonymouse:hover,
 button.showLoginButtonAnonymouse:active {
     background-color: initial;
-    color: #FF4742; /* Gjør teksten rød og bakgrunnen gjennomsiktig */
+    color: #5B8AB3; /* Gjør teksten rød og bakgrunnen gjennomsiktig */
 }
 
 /* Aktiv animasjon (trykket ned) */

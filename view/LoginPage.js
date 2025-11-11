@@ -5,7 +5,7 @@ function showLoginPage(){
         html = /*HTML*/ `<!-- Lager HTML for innloggingsskjemaet -->
         <div class="showLoginPage">
             <img src="media/logo.png" alt="Logo" width="120" height="120">
-            <h2 class="header">Logg inn</h2>
+            <h2 class="title">Logg inn</h2>
             <div class="showLoginPage">
                 <!-- Brukernavn input -->
                 <input 

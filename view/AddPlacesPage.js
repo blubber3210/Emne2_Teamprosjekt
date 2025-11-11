@@ -1,6 +1,7 @@
 function showAddPlacesPage(){
     let html = /*HTML*/ `
     <div class="addPlaceDiv">
+        <button class="registerButton" onclick="goBack('mainFeed')" style="width: auto;">Tilbake</button>
         <h1 class="addPlaceText" style="font-size: 30px;">Legg til sted</h2>
         
         <div class="addPlaceInputSection"> <!-- navn, by, adresse, beskrivelse inputs-->
@@ -56,7 +57,6 @@ function showAddPlacesPage(){
         <div class="addPlaceImageSection"> <!-- last opp bilde -->
             <h2 class="addPlaceText">Last opp bilde</h2>
             <input type="file" id="uploadFile" accepted="image/*" onchange="uploadPlaceImage(this)">
-            <img src="" alt="no image" id="addPlaceImg" style='width: 100px;'>
         </div>
         
 

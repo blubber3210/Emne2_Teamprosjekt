@@ -1,6 +1,7 @@
 function showRegisterUserPage() {
     let html = /*HTML*/ `
         <div class="registerDiv">
+        <button class="registerButton" onclick="goBack('mainFeed')" style="width: auto;">Tilbake</button>
             <img src="media/logo.png" alt="Logo" width="120" height="120">
             <h1 class="title">Lag ny bruker</h1>
             <div>
