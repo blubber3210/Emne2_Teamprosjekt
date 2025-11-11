@@ -2,7 +2,7 @@
 
 const model = {
     app: {
-        currentPage: 'mainFeed',
+        currentPage: 'addPlaces',
         currentUser: null,
         selectedPlace: 0,
         isAdmin: false,

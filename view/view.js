@@ -23,7 +23,7 @@ function updateView(){
     </header>
     <main>${content}</main>
 
-    <footer>navigation</footer>
+    <footer></footer>
     `;
 }
 

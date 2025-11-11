@@ -1,0 +1,10 @@
+div.placePageDiv {
+    text-align: center;
+}
+
+img.placePageImg {
+    width: 273px;
+    height: 273px;
+    object-fit: cover;
+    border-radius: 10px;
+}

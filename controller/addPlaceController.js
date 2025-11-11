@@ -30,53 +30,32 @@ function ratingInput(item, rating){ // registrerer rating av food og coffee
         console.log('rating error')
     }
 
-    // changeStars(item, rating);
-    // updateView();
 }
 
-// function changeStars(type, clickedStar){
-//     let coffeeStar1 = document.getElementById("starCoffee0");
-//     let coffeeStar2 = document.getElementById("starCoffee1");
-//     let coffeeStar3 = document.getElementById("starCoffee2");
-//     let coffeeStar4 = document.getElementById("starCoffee3");
-//     let coffeeStar5 = document.getElementById("starCoffee4");
 
-//     let foodStar1 = document.getElementById("starFood0");
-//     let foodStar2 = document.getElementById("starFood1");
-//     let foodStar3 = document.getElementById("starFood2");
-//     let foodStar4 = document.getElementById("starFood3");
-//     let foodStar5 = document.getElementById("starFood4");
-    
-//     if (type == "food" && clickedStar == 1){
-//         coffeeStar1.classList.add("starFilled");
-//     }
+// function uploadPlaceImage(){
+//     const fileUpload = document.getElementById(`uploadFile`);
+//     fileUpload.addEventListener("change", function(){
+//         const reader = new FileReader();
+//         reader.addEventListener("load", () => {
+//             model.viewState.addPlace.image = reader.result;
+//         });
+//         reader.readAsDataURL(this.files[0]);
+//     });
 // }
 
-function readURL(input){
-    if (input.files && input.files[0]) {
-        let reader = new FileReader();
-        reader.onload = function (e) {
-            document.querySelector("#addPlaceImg").setAttribute("src", e.target.result);
-        };
-    
-        reader.readAsDataURL(input.files[0]);
-    }
- // SPØRSMÅLSTEGN ???? Hvordan lagre bildet og vise det på neste side 
-    document.getElementById("imageUpload").addEventListener('change', function(storeImage){
-        let uploadedImage = event.target.files[0];
+function uploadPlaceImage(input) {
+    console.log(input);
+    const file = input.files[0];
+    if (!file) return;
 
-        let reader = new FileReader();
-        reader.onload = function(e) {
-            let dataUrl = e.target.result; // Get the data Url
-            let imgElement = document.createElement("img");
-            imgElement.src = dataUrl;
-            document.body.appendChild(imgElement);
-        };
-
-        reader.readAsDataURL(uploadedImage);
-        model.viewState.addPlace.image = uploadedImage;
-    });
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        model.viewState.addPlace.image = e.target.result; // store in your live model
+    };
+    reader.readAsDataURL(file);
 }
+
 
 function submitPlaceInputs(){ // pusher mellomlagring til data
     let newPlace = model.viewState.addPlace;

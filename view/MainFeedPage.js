@@ -1,13 +1,15 @@
 function showMainFeedPage() {
     let html = /*HTML*/ `
   <div class="feedControls">
-    <button onclick="changePage('addPlaces')"> ➕ Legg til sted</button>
+    <button class="mainFeedButton" onclick="changePage('addPlaces')"> Legg til sted</button>
+    <button class="mainFeedButton" onclick="changePage('loginPage')">Logg inn</button>
     <br>
     <input
+        class="mainFeedInput"
         placeholder="Søk by/adresse"
         oninput="model.viewState.mainFeed.search = this.value"
         type="text">
-    <button onclick="updateView()">🔍</button>
+    <button style="background-color: #5B8AB3; border-width: 0; border-radius: 15px; padding: 3px;" onclick="updateView()">🔍</button>
     </div>
     <div id="feedDiv">
     ${drawFeed()}

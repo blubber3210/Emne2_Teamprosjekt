@@ -55,7 +55,7 @@ function showAddPlacesPage(){
 
         <div class="addPlaceImageSection"> <!-- last opp bilde -->
             <h2 class="addPlaceText">Last opp bilde</h2>
-            <input type="file" id="imageUpload" name="imageUpload" accept="image/*" onchange="readURL(this)">
+            <input type="file" id="uploadFile" accepted="image/*" onchange="uploadPlaceImage(this)">
             <img src="" alt="no image" id="addPlaceImg" style='width: 100px;'>
         </div>
         

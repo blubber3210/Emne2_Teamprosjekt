@@ -47,3 +47,46 @@ div.filteredListInfo {
 .deleteBtn {
     background-color: red;
 }
+
+.mainFeedButton {
+  background-color: #5B8AB3;
+  border-radius: 8px;
+  border-width: 0;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px 12px;
+  text-align: center;
+  width: 120px;
+  height: 29px;
+  font-family: "Afacad", sans-serif;
+}
+
+.mainFeedInput {
+  background-color: #E6F3FF;
+  border-radius: 8px;
+  border: 2px solid #5B8AB3;
+  color: #5B8AB3;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px;
+  padding: 1px 2px;
+  text-align: center;
+  width: 150px;
+  font-family: "Afacad", sans-serif;
+}
+
+.deleteBtn {
+  background-color: #5B8AB3;
+  border-radius: 8px;
+  border-width: 0;
+  color: #FFFFFF; 
+  justify-self: end;
+  margin-right: 5px;
+}
+
+.deleteBtn:hover {
+  background-color: red;
+  border-width: 2px;
+}

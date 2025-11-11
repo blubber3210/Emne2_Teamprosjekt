@@ -2,32 +2,27 @@ function showPlacePage(){
     let selectedPlace = model.app.selectedPlace;
     
     let html = /*HTML*/`
-        <div class="top">
-           <h1 id="title">${selectedPlace.title}</h1>
-           <p id="address">${selectedPlace.address}</p>
-
-           <!-- bilde -->
-           <button class="prev" onclick="Controller.prevImage()">&#8592;</button>
-           <img id="carousel-img" src="${selectedPlace.image}" alt="Bilde">
-           <button class="next" onclick="Controller.nextImage()">&#8594;</button>
-           
-           <!-- rating og kategorier -->
-           <p id="rating">☕ ${'⭐'.repeat(selectedPlace.rateCoffee)} 
-           <br> 🍽️ ${'⭐'.repeat(selectedPlace.rateFood)} </p>
-           <p id="category">${drawCategories()}</p>
-
-       </div>
-
-       <!-- BESKRIVELSE/rating-->
-       <div class="description">
-           <p id="description">${selectedPlace.description}</p>
-       </div>
-
-
-       <!-- BUNN KNAPPER -->
-       <div class="buttons">
-           <button onclick="goBack('mainFeed')">Tilbake</button>
-       </div>    
+    <div class="placePageDiv">
+        
+        <h1 class="title">${selectedPlace.title}</h1>
+        <p id="category">${drawCategories()}</p>
+        
+        <!-- bilde -->
+        <img id="carousel-img" class="placePageImg" src="${selectedPlace.image}" alt="Bilde">
+        <p class="registerText">${selectedPlace.address}</p>
+        
+        <!-- rating og kategorier -->
+        <p id="rating">☕ ${'⭐'.repeat(selectedPlace.rateCoffee)} 
+        <br> 🍽️ ${'⭐'.repeat(selectedPlace.rateFood)} </p>
+    
+        <!-- BESKRIVELSE/rating-->
+        <p class="registerText">Beskrivelse</p>
+        <p class="" id="description"> ${selectedPlace.description}</p>
+    
+        <!-- BUNN KNAPPER -->
+        <button class="registerButton" onclick="goBack('mainFeed')">Tilbake</button>
+       
+    </div>
     `;
     
     content = html;
@@ -35,11 +30,11 @@ function showPlacePage(){
 }
 
 function drawCategories(){
-    let html = `kategori:`;
+    let html = ``;
     
     for (let i = 0; i < model.app.selectedPlace.categoryID.length; i++){
         html += `
-        <br>${model.data.category[i].name}
+        ♡${model.data.category[i].name}
         `;
     }
     return html; 
