@@ -1,44 +1,49 @@
 #feedDiv {
-  display: grid;
-  text-align: center;
+    display: grid;
+    text-align: center;
 }
 
 .filteredListImg {
-  width: 273px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  /* text-align: center; */
-  /* align-items: center; */
+    width: 273px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    /* text-align: center; */
+    /* align-items: center; */
 }
 
 div.feedItem {
-  border: black 1px solid;
-  background-color: #E6F3FF;
-  margin: 5px;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto;
-  grid-template-areas:  'img'
-                        'info';
-  box-shadow: 4px 5px 10px 7px rgba(1, 1, 1, 0.1); 
+    border: black 1px solid;
+    background-color: #e6f3ff;
+    margin: 5px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        'img'
+        'info';
+    box-shadow: 4px 5px 10px 7px rgba(1, 1, 1, 0.1);
 }
 
 div.filteredListImg {
-  grid-area: 'img';
-  justify-self: center;
+    grid-area: 'img';
+    justify-self: center;
 }
 
 div.filteredListInfo {
-  grid-area: 'info';
-  padding: 5px;
+    grid-area: 'info';
+    padding: 5px;
 }
 
 .feedItem:hover {
-  border: 2px black solid;
+    border: 2px black solid;
 }
 
 .filteredListInfo {
-  display: grid;
+    display: grid;
+}
+
+.deleteBtn {
+    background-color: red;
 }

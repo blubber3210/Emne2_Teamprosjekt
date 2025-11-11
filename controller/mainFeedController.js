@@ -14,9 +14,15 @@ function filterPlaces() {
             }
         }
         return filteredPlaces;
-
-
     } else if (!model.viewState.mainFeed.search) {
         return model.data.placesList;
     }
+}
+
+function deleteItem(chosenID) {
+    let places = model.data.placesList;
+    let index = places.findIndex((place) => place.id === chosenID);
+
+    model.data.placesList.splice(index, 1);
+    updateView();
 }

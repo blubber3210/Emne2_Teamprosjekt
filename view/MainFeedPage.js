@@ -1,5 +1,5 @@
 function showMainFeedPage() {
-  let html = /*HTML*/ `
+    let html = /*HTML*/ `
   <div class="feedControls">
     <button onclick="changePage('addPlaces')"> ➕ Legg til sted</button>
     <br>
@@ -14,31 +14,33 @@ function showMainFeedPage() {
     </div>
     `;
 
-  return html;
+    return html;
 }
 
-function deleteButton(chosenID){
-  let html = '';
-  if(model.app.isAdmin){
-    html = /*HTML*/`
-      <button onclick="deleteItem(chosenID)">Slett</button>
+function deleteButton(chosenID) {
+    let html = '';
+
+    if (model.app.isAdmin) {
+        html = /*HTML*/ `
+      <button class="deleteBtn" onclick="deleteItem(${chosenID})">Slett</button>
     `;
-  }
-  return html;
+    }
+    // console.log(id);
+    return html;
 }
 
 function drawFeed() {
-  let places = filterPlaces();
-  let searchword = model.viewState.mainFeed.search;
+    let places = filterPlaces();
+    let searchword = model.viewState.mainFeed.search;
 
-  let isSearching = searchword ? 'Resultater for: ' : '';
-  let html = ``;
+    let isSearching = searchword ? 'Resultater for: ' : '';
+    let html = ``;
 
-  for (let i = 0; i < places.length; i++) {
-    html += `
+    for (let i = 0; i < places.length; i++) {
+        html += `
 
+    ${deleteButton(places[i].id)}
         <div class="feedItem" onclick="goToPlacePage(${places[i].id})">
-          ${deleteButton(places[i].id)}
             <div class="filteredListImg">
         <img class="filteredListImg" src="${places[i].image}">
             </div>
@@ -52,16 +54,16 @@ function drawFeed() {
             </div>
 
         </div>`;
-  }
-  if (model.viewState.search) {
-  }
-  return isSearching + searchword + html;
+    }
+    if (model.viewState.search) {
+    }
+    return isSearching + searchword + html;
 }
 
 function drawFilterMenu() {
-  let options = document.createElement('div');
-  let tagFilterBtn = document.createElement('button');
-  tagFilterBtn.textContent = Tags;
+    let options = document.createElement('div');
+    let tagFilterBtn = document.createElement('button');
+    tagFilterBtn.textContent = Tags;
 }
 
 function tagFilterClickHandler() {}
