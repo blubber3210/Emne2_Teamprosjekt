@@ -34,8 +34,8 @@ function deleteButton(chosenID) {
 function drawFeed() {
     let places = filterPlaces();
     let searchword = model.viewState.mainFeed.search;
-
     let isSearching = searchword ? 'Resultater for: ' : '';
+    let reset = searchword ? resetButton() : '';
     let html = ``;
 
     for (let i = 0; i < places.length; i++) {
@@ -59,13 +59,20 @@ function drawFeed() {
     }
     if (model.viewState.search) {
     }
-    return isSearching + searchword + html;
+    return isSearching + searchword + reset + html;
 }
 
-function drawFilterMenu() {
-    let options = document.createElement('div');
-    let tagFilterBtn = document.createElement('button');
-    tagFilterBtn.textContent = Tags;
+function resetButton() {
+    let html = '';
+    html = `<p onclick="resetSearch()"
+    style="justify-self: center; text-align:center;
+    text-decoration: underline; cursor:pointer;">nullstill søk</p>`;
+    return html;
 }
 
-function tagFilterClickHandler() {}
+function resetSearch() {
+    if (model.viewState.mainFeed.search) {
+        model.viewState.mainFeed.search = '';
+    }
+    updateView();
+}
